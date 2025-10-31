@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nuestra familia - Mi Familia</title>
+    <meta name="description" content="Somos una familia de la República Checa que busca un hogar estable en Elche.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metropolis:wght@300;400;500;600;700&family=PT+Serif:wght@300;400;600;700&family=Lora:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1.075rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #f5f5f5;
+            padding: 20px 0;
+            margin-bottom: 60px;
+        }
+        
+        .header-content {
+            text-align: center;
+        }
+        
+        .logo {
+            font-family: 'Dancing Script', 'Reklame Script', 'Playfair Display', serif;
+            font-size: 2.125rem;
+            font-weight: 400;
+            color: #2c3e50;
+            margin-bottom: 0;
+            letter-spacing: 0;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+        
+        section {
+            margin-bottom: 80px;
+        }
+        
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-content.reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .section-content.reverse .text-wrapper {
+            order: 1;
+        }
+        
+        .section-content.reverse .image-wrapper {
+            order: 2;
+        }
+        
+        .image-wrapper {
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .text-wrapper h1 {
+            font-family: 'Dancing Script', 'Reklame Script', 'Playfair Display', serif;
+            font-size: 2.125rem;
+            font-weight: 400;
+            line-height: 1.25;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        
+        .text-wrapper h1.wnd-align-center {
+            text-align: center;
+        }
+        
+        .text-wrapper h1.wnd-align-left {
+            text-align: left;
+        }
+        
+        .text-wrapper p {
+            margin-bottom: 20px;
+            font-size: 1.075rem;
+            line-height: 1.6;
+        }
+        
+        .text-wrapper ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .text-wrapper ul li {
+            padding: 5px 0 5px 30px;
+            position: relative;
+        }
+        
+        .text-wrapper ul li:before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .text-wrapper ul li p {
+            margin-bottom: 0;
+        }
+        
+        .text-wrapper a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .text-wrapper a:hover {
+            text-decoration: underline;
+        }
+        
+        .text-wrapper strong {
+            font-weight: 600;
+        }
+        
+        /* Full Width Section */
+        .full-width {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+            justify-items: center;
+            align-items: start;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 280px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #f5f5f5;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+            border-top: 1px solid #ddd;
+        }
+        
+        footer p {
+            font-size: 0.875rem;
+            color: #666;
+        }
+        
+        footer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section-content.reverse {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .section-content.reverse .image-wrapper {
+                order: -1;
+            }
+            
+            .section-content.reverse .text-wrapper {
+                order: 2;
+            }
+            
+            .image-wrapper {
+                max-width: 100%;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                max-width: 100%;
+            }
+            
+            .text-wrapper h1 {
+                font-size: 1.75rem;
+            }
+            
+            header {
+                padding: 30px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Nuestra familia</div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <!-- Sobre nosotros Section -->
+            <section>
+                <div class="section-content">
+                    <div class="image-wrapper">
+                        <img src="images/zesvatby.jpeg" alt="Nuestra familia">
+                    </div>
+                    <div class="text-wrapper">
+                        <h1 class="wnd-align-center">Sobre nosotros&nbsp;</h1>
+                        <p><strong>Somos una familia de la República Checa</strong> que busca un hogar estable en Elche.</p>
+                        <ul>
+                            <li>
+                                <p>👨‍💻 <strong>Radim</strong> – ingeniero de software sénior, trabaja de forma remota para una empresa internacional de tecnología.</p>
+                            </li>
+                            <li>
+                                <p>👩‍🍼 <strong>Tereza</strong> – actualmente de baja por maternidad, dedicada al cuidado de nuestros hijos.</p>
+                            </li>
+                            <li>
+                                <p>👦 <strong>Alex</strong> – 5 años, le encantan los libros y aprender idiomas.</p>
+                            </li>
+                            <li>
+                                <p>👧 <strong>Isabela</strong> – 2 años, alegre y curiosa.</p>
+                            </li>
+                        </ul>
+                        <p></p>
+                        <p>En los últimos años hemos vivido entre la República Checa, <strong>Tenerife</strong> y <strong>Torrevieja</strong>.</p>
+                        <p>Ahora queremos establecernos en <strong style="font-size: 1.075rem; letter-spacing: 0px;">Elche</strong>, donde nos gustaría que nuestros hijos empezaran el colegio y formar un hogar a largo plazo.</p>
+                        <p>Buscamos una vivienda de alquiler <strong>a largo plazo</strong> en una zona familiar y agradable.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Solvencia y garantías Section -->
+            <section>
+                <div class="section-content reverse">
+                    <div class="text-wrapper">
+                        <h1 class="wnd-align-center">Solvencia y garantías&nbsp;</h1>
+                        <p>Queremos ofrecer total transparencia y confianza a los propietarios.<br>
+                        Podemos demostrar nuestra estabilidad económica con los siguientes documentos:</p>
+                        <p></p>
+                        <ul>
+                            <li>
+                                <p>📄 <strong>Contrato de trabajo</strong> de Radim con la empresa <strong><a href="https://www.ysoft.com/" rel="nofollow noopener" target="_blank">Y Soft</a></strong>, donde trabaja desde hace más de <strong>10 años</strong> como ingeniero de software sénior.</p>
+                            </li>
+                            <li>
+                                <p>💰 <strong>Extracto bancario</strong> que muestra el ingreso mensual del salario.</p>
+                            </li>
+                            <li>
+                                <p>💶 <strong style="font-size: 1.075rem; letter-spacing: 0px;">Extracto de la cuenta de ahorro</strong>, como prueba adicional de solvencia.</p>
+                            </li>
+                            <li>
+                                <p>📈 <strong>Extracto de la cuenta de inversión.</strong></p>
+                            </li>
+                            <li>
+                                <p>🏡 <strong>Propiedad de un inmueble en la República Checa</strong>, actualmente alquilado desde diciembre de 2025.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images/506697663_10228822837864316_3114739220383698883_n.jpeg" alt="Familia">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Perfiles y redes sociales Section -->
+            <section>
+                <div class="full-width">
+                    <div class="text-wrapper">
+                        <h1 class="wnd-align-center">Perfiles y redes sociales&nbsp;</h1>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="text-wrapper">
+                        <p>👨‍💻 <strong>Radim</strong></p>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/radimgoth/" rel="nofollow noopener" target="_blank">LinkedIn – Perfil profesional de Radim</a></li>
+                            <li><a href="https://www.instagram.com/p/DFH6A0ms3uB/?img_index=1" rel="nofollow noopener" target="_blank">Décimo aniversario laboral</a></li>
+                            <li><a href="https://www.etoro.com/people/radimgoth" rel="nofollow noopener" target="_blank">Perfil público de inversión en eToro</a>&nbsp;</li>
+                        </ul>
+                    </div>
+                    <div class="text-wrapper">
+                        <p>👩‍🍼 <strong>Tereza</strong></p>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/tereza-g%C3%B6th-283b2aab/" rel="nofollow noopener" target="_blank">LinkedIn – Perfil profesional de Tereza</a></li>
+                            <li><a href="https://www.facebook.com/tereza.rovna" rel="nofollow noopener" target="_blank">Facebook – Perfil personal de Tereza</a>&nbsp;&nbsp;</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contacto Section -->
+            <section>
+                <div class="full-width">
+                    <div class="text-wrapper">
+                        <h1 class="wnd-align-center">Contacto&nbsp;&nbsp;</h1>
+                        <p>Si dispone de una <strong>vivienda en alquiler</strong> o conoce alguna <strong>oferta de alojamiento en Elche</strong>, nos encantaría saber más.</p>
+                        <p>📱 <strong>WhatsApp (preferido):</strong>&nbsp;+420 776 062 345<br>
+                        📧 <strong>Correo electrónico:</strong>&nbsp;tereza.goth@gmail.com<br>
+                        ☎️ <strong>Teléfono:</strong> +420 776 062 345</p>
+                        <p>Respondemos con rapidez y estaremos encantados de hablar sobre cualquier oportunidad de alquiler o subarrendamiento.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Gallery Section -->
+            <section>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="images/photo1.jpeg" alt="Foto familia 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/photo2.jpeg" alt="Foto familia 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/photo3.jpg" alt="Foto familia 3">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Página creada por Radim</p>
+        </div>
+    </footer>
+</body>
+</html>
+
